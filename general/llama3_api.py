@@ -14,7 +14,11 @@ def query_llama3(prompt):
     """
     url = "http://localhost:11434/api/chat"  # Default Ollama endpoint
     headers = {"Content-Type": "application/json"}
-    payload = {"model": "llama3", "prompt": prompt}
+    payload = {
+      "model": "llama3",
+      "messages": [{"role": "user", "content": prompt}],
+      "stream": False
+  }
 
     try:
         response = requests.post(url, json=payload, headers=headers)
