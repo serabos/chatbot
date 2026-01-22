@@ -8,13 +8,9 @@ def send_prompt(prompt):
         prompt (str): The user input to send to the backend.
     """
     url = "http://127.0.0.1:5000/chat"  # The Flask backend endpoint
-   
-    '!check the URL here'
-    
-    # Create the payload (send the prompt in JSON format)
+       
     payload = {"prompt": prompt}
     
-    # Send the POST request to the backend
     response = requests.post(url, json=payload)
     
     # Handle the response
