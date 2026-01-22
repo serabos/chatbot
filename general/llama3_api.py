@@ -1,6 +1,6 @@
 import logging
 import requests
-logging.basicConfig(level=logging.ERROR) #added on 18/12/2024
+logging.basicConfig(level=logging.ERROR) 
 
 def query_llama3(prompt):
     """
@@ -12,7 +12,7 @@ def query_llama3(prompt):
     Returns:
         str: The response from Llama3.
     """
-    url = "http://localhost:11434/api/chat"  # Default Ollama endpoint
+    url = "http://localhost:11434/api/chat"  # Ollama endpoint
     headers = {"Content-Type": "application/json"}
     payload = {
       "model": "llama3",
@@ -30,5 +30,5 @@ def query_llama3(prompt):
             return "Unexpected response format from Llama3 API"
         #return response.json().get("response")
     except requests.exceptions.RequestException as e:
-        logging.error(f"Error querying Llama3: {e}") # added on 18/12/2024
+        logging.error(f"Error querying Llama3: {e}") 
         return f"Error querying Llama3: {str(e)}"
